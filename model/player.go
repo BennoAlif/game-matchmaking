@@ -6,7 +6,7 @@ import (
 )
 
 type Player struct {
-	Username    string `gorm:"primaryKey"`
+	Username    string `gorm:"primaryKey;"`
 	PlayerLevel int
 	CreatedAt   time.Time
 	UpdatedAt   time.Time

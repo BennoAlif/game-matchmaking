@@ -1,9 +1,11 @@
 package model
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
 type Match struct {
 	gorm.Model
-	PlayerUsername string
-	RoomID         string
+	PlayerUsername	string `gorm:"size:191"`
+	RoomID			uint
 }

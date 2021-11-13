@@ -13,14 +13,14 @@ type DBConfig struct {
 	DBUser string
 	DBName string
 	DBPort string
-	DBPass string
+	DbPass string
 }
 
 func LoadDB(config DBConfig) *gorm.DB {
 	var err error
 	conStr := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta",
-		config.DBHost, config.DBUser, config.DBPass, config.DBName, config.DBPort,
+		"%s@/%s?charset=utf8mb4&parseTime=True&loc=Local",
+		config.DBUser, config.DBName,
 	)
 
 	db, err := gorm.Open(mysql.Open(conStr), &gorm.Config{})
