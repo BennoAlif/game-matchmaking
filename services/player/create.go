@@ -11,6 +11,5 @@ func (s PlayerService) CreateOne(username string) (model.Player, error) {
 	if err := s.DB.Create(&player).Error; err != nil {
 		return player, err
 	}
-
 	return player, nil
 }
